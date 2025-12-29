@@ -1,0 +1,94 @@
+### p
+```c
+
+```
+
+---
+
+### 381p
+```c
+#include <stdio.h>
+#include <string.h>
+
+char* cmp(char* inStr);
+
+int main() {
+    char str[16];
+
+    printf("단어 입력 : ");
+    scanf("%s", str);
+    printf("입력한 단어 : %s, 생략한 단어 : %s", str, cmp(str));
+
+    return 0;
+}
+
+char* cmp(char* inStr) {
+    static char resp[16];
+    int i = 0;
+    while (*inStr != '\0') {
+        if (i < 5) resp[i++] = *inStr;
+        else resp[i++] = '*';
+        inStr++;
+    }
+    resp[i] = '\0';
+
+    return resp;
+}
+```
+
+---
+
+### p
+```c
+
+```
+
+---
+
+
+### p
+```c
+
+```
+
+---
+
+
+### p
+```c
+
+```
+
+---
+
+
+### p
+```c
+
+```
+
+---
+
+
+### p
+```c
+
+```
+
+---
+
+
+### p
+```c
+
+```
+
+---
+
+
+### p
+```c
+
+```
+
+---
