@@ -7,8 +7,8 @@
 
 ## 479p - 16-1
 ```c
-#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+#include <stdlib.h>
 
 int main() {
 	int* pi;
@@ -23,7 +23,7 @@ int main() {
 
 	*pi = 10;
 	*pd = 3.4;
-	
+
 	printf("정수형으로 사용: %d\n", *pi);
 	printf("실수형으로 사용: %.1lf\n", *pd);
 
