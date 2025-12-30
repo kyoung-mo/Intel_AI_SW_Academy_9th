@@ -199,10 +199,8 @@ int main(void)
 #include<stdlib.h>
 
 typedef int element;
-typedef int element;
 typedef struct {
-	element* data;		// data은 포인터로 정의된다. 
-	int capacity;		// 현재 크기
+	element data[MAX_STACK_SIZE];
 	int top;
 } StackType;
 
@@ -227,11 +225,10 @@ int is_full(StackType* s)
 void push(StackType* s, element item)
 {
 	if (is_full(s)) {
-		s->capacity *= 2;
-		s->data =
-			(element*)realloc(s->data, s->capacity * sizeof(element));
+		fprintf(stderr, "스택 포화 에러\n");
+		return;
 	}
-	s->data[++(s->top)] = item;
+	else s->data[++(s->top)] = item;
 }
 
 // 삭제함수
@@ -245,25 +242,21 @@ element pop(StackType* s)
 }
 int main(void)
 {
-	StackType* s;
-
-	s = (StackType*)malloc(sizeof(StackType));
-	init_stack(s);
-	push(s, 1);
-	push(s, 2);
-	push(s, 3);
-	printf("%d\n", pop(s));
-	printf("%d\n", pop(s));
-
-	printf("%d\n", pop(s));
-	free(s);
+	StackType s;
+	init_stack(&s);
+	push(&s, 1);
+	push(&s, 2);
+	push(&s, 3);
+	printf("%d\n", pop(&s));
+	printf("%d\n", pop(&s));
+	printf("%d\n", pop(&s));
+	return 0;
 }
-
 
 
 ```
 
-오류 뜸
+<img width="1106" height="195" alt="image" src="https://github.com/user-attachments/assets/26ef4f2c-d239-463c-b0c8-2fa66518f62a" />
 
 ---
 
