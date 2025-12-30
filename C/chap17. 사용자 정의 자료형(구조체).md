@@ -36,19 +36,55 @@ int main() {
 	struct student2 s2;
 
 	printf("구조체의 크기 : %d, %d\n", sizeof(s1), sizeof(s2));
-
 }
 ```
 
 <img width="1108" height="190" alt="image" src="https://github.com/user-attachments/assets/fe67664f-fca3-43b8-982b-cecf9ba33980" />
 
 ---
+
+- 전역 변수같은 경우 추후에 개발 시 구조체 안에 전부 넣는 방식으로 관리하기 쉽다.
+- 구조체 내 구조체 내 구조체 적극 활용
+
+<img width="707" height="546" alt="image" src="https://github.com/user-attachments/assets/095919e4-c9e0-476e-a65b-3d4988b06aab" />
+
+<img width="684" height="693" alt="image" src="https://github.com/user-attachments/assets/6e7ae99f-b433-4a09-9f1a-a204128ebbd0" />
+
 ---
 
+구조체의 장점으로 
 
-## p
+- struct student max
+- struct student s1
+- max = s1 이런 식으로 복사가 가능하다.
+
+## 17.2 구조체 포인터
+
+## 확인문제 1번 540p
 ```c
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
 
+struct marriage {
+	char name[20];
+	int age;
+	char gender;
+	double height;
+};
+
+struct marriage m1 = { "Andy", 22, 'm', 187.5 };
+struct marriage* mp = &m1;
+
+// 확인문제 1
+// mp를 이용해 m1에 저장된 값을 출력하시오.
+
+int main() {
+	
+	printf("%s\n%d\n%c\n%.1lf", mp->name, mp->age, mp->gender, mp->height);
+	
+	return 0;
+}
 ```
 
 ---
