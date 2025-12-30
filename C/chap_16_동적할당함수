@@ -1,0 +1,270 @@
+날짜 : 2025-12-30
+
+## CHAP 16 - 메모리 동적 할당
+  ## 16-1 동적 할당 함수
+  
+---
+
+## 479p - 16-1
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main() {
+	int* pi;
+	double* pd;
+
+	pi = (int*)malloc(sizeof(int));
+	if (pi == NULL) {
+		printf("# 메모리가 부족합니다.\n");
+		exit(1);
+	}
+	pd = (double*)malloc(sizeof(double));
+
+	*pi = 10;
+	*pd = 3.4;
+	
+	printf("정수형으로 사용: %d\n", *pi);
+	printf("실수형으로 사용: %.1lf\n", *pd);
+
+	free(pi);
+	free(pd);
+
+
+	return 0;
+}
+```
+
+---
+
+
+## 492p - 16-4
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+	
+	char temp[80];
+	char* str[3];
+	int i;
+
+	for (i = 0; i < 3; i++) {
+		printf("문자열을 입력하세요 : ");
+		gets(temp);
+		str[i] = (char*)malloc(strlen(temp) + 1);
+		strcpy(str[i], temp);
+	}
+
+	for (i = 0; i < 3; i++) {
+		printf("%s\n", str[i]);
+	}
+
+	for (i = 0; i < 3; i++) {
+		free(str[i]);
+	}
+	
+	return 0;
+}
+```
+
+---
+  C:\Users\KCCISTC>netstat -ona
+
+활성 연결
+
+  프로토콜  로컬 주소              외부 주소              상태            PID
+  TCP    0.0.0.0:135            0.0.0.0:0              LISTENING       1732
+  TCP    0.0.0.0:445            0.0.0.0:0              LISTENING       4
+  TCP    0.0.0.0:5040           0.0.0.0:0              LISTENING       5256
+  TCP    0.0.0.0:7680           0.0.0.0:0              LISTENING       18876
+  TCP    0.0.0.0:49664          0.0.0.0:0              LISTENING       1464
+  TCP    0.0.0.0:49665          0.0.0.0:0              LISTENING       1288
+  TCP    0.0.0.0:49666          0.0.0.0:0              LISTENING       1504
+  TCP    0.0.0.0:49667          0.0.0.0:0              LISTENING       2800
+  TCP    0.0.0.0:49668          0.0.0.0:0              LISTENING       3600
+  TCP    0.0.0.0:49669          0.0.0.0:0              LISTENING       1432
+  TCP    10.10.16.172:139       0.0.0.0:0              LISTENING       4
+  TCP    10.10.16.172:7680      10.10.16.166:51761     ESTABLISHED     18876
+  TCP    10.10.16.172:7680      10.10.16.166:54510     TIME_WAIT       0
+  TCP    10.10.16.172:7680      10.10.16.166:54512     TIME_WAIT       0
+  TCP    10.10.16.172:7680      10.10.16.166:60664     TIME_WAIT       0
+  TCP    10.10.16.172:50435     104.21.15.154:443      ESTABLISHED     17984
+  TCP    10.10.16.172:51106     211.183.208.161:443    ESTABLISHED     7256
+  TCP    10.10.16.172:51115     211.249.240.154:995    ESTABLISHED     7256
+  TCP    10.10.16.172:51559     142.251.170.188:5228   ESTABLISHED     17984
+  TCP    10.10.16.172:51689     140.82.114.26:443      ESTABLISHED     17984
+  TCP    10.10.16.172:55223     20.42.73.30:443        TIME_WAIT       0
+  TCP    10.10.16.172:56178     52.182.143.210:443     TIME_WAIT       0
+  TCP    10.10.16.172:57930     4.213.25.242:443       ESTABLISHED     3848
+  TCP    10.10.16.172:59610     34.110.164.207:443     ESTABLISHED     12536
+  TCP    10.10.16.172:62398     211.183.210.24:443     ESTABLISHED     17984
+  TCP    10.10.16.172:62399     211.183.210.21:443     TIME_WAIT       0
+  TCP    10.10.16.172:62400     211.183.210.21:443     TIME_WAIT       0
+  TCP    10.10.16.172:62401     13.89.179.8:443        TIME_WAIT       0
+  TCP    10.10.16.172:62578     18.97.36.51:443        ESTABLISHED     17984
+  TCP    10.10.16.172:63279     8.8.4.4:443            ESTABLISHED     17984
+  TCP    10.10.16.172:64667     40.99.10.18:443        ESTABLISHED     25976
+  TCP    10.10.16.172:64759     208.103.161.1:443      ESTABLISHED     12536
+  TCP    10.10.16.172:64761     208.103.161.1:443      ESTABLISHED     12536
+  TCP    10.10.16.172:65218     211.183.210.24:443     CLOSE_WAIT      17984
+  TCP    127.0.0.1:3555         0.0.0.0:0              LISTENING       9964
+  TCP    127.0.0.1:3555         127.0.0.1:50554        TIME_WAIT       0
+  TCP    127.0.0.1:15397        0.0.0.0:0              LISTENING       568
+  TCP    127.0.0.1:15398        0.0.0.0:0              LISTENING       568
+  TCP    127.0.0.1:19891        0.0.0.0:0              LISTENING       568
+  TCP    127.0.0.1:29891        0.0.0.0:0              LISTENING       568
+  TCP    [::]:135               [::]:0                 LISTENING       1732
+  TCP    [::]:445               [::]:0                 LISTENING       4
+  TCP    [::]:7680              [::]:0                 LISTENING       18876
+  TCP    [::]:49664             [::]:0                 LISTENING       1464
+  TCP    [::]:49665             [::]:0                 LISTENING       1288
+  TCP    [::]:49666             [::]:0                 LISTENING       1504
+  TCP    [::]:49667             [::]:0                 LISTENING       2800
+  TCP    [::]:49668             [::]:0                 LISTENING       3600
+  TCP    [::]:49669             [::]:0                 LISTENING       1432
+  TCP    [::1]:64919            [::]:0                 LISTENING       15968
+  UDP    0.0.0.0:5050           *:*                                    5256
+  UDP    0.0.0.0:5353           *:*                                    2644
+  UDP    0.0.0.0:5353           *:*                                    17448
+  UDP    0.0.0.0:5353           *:*                                    17448
+  UDP    0.0.0.0:5355           *:*                                    2644
+  UDP    0.0.0.0:54481          8.8.8.8:53                             7256
+  UDP    10.10.16.172:137       *:*                                    4
+  UDP    10.10.16.172:138       *:*                                    4
+  UDP    10.10.16.172:1900      *:*                                    10872
+  UDP    10.10.16.172:56978     *:*                                    10872
+  UDP    127.0.0.1:1900         *:*                                    10872
+  UDP    127.0.0.1:49664        127.0.0.1:49664                        3792
+  UDP    127.0.0.1:56979        *:*                                    10872
+  UDP    [::]:5353              *:*                                    2644
+  UDP    [::]:5353              *:*                                    17448
+  UDP    [::]:5355              *:*                                    2644
+  UDP    [::1]:1900             *:*                                    10872
+  UDP    [::1]:56977            *:*                                    10872
+  UDP    [fe80::1d51:55cd:6f91:ad4e%6]:1900  *:*                                    10872
+  UDP    [fe80::1d51:55cd:6f91:ad4e%6]:56976  *:*                                    10872
+
+  127.0.0.1 이라는 주소는 나의 주소를 얘기한다.
+  자기 자신이 자기 자신과 통신할 일이 뭐가 있는가?
+  프로그램 두개를 만들었다고 했을 때, 프로그램끼리 서로 통신할 일이 있다.
+
+  C 프로그래밍중에 통신하는 방식을 소켓 통신이라고 함.
+  서버, 클라이언트 프로그램을 만들어야 한다.
+  클라이언트를 만들고, 프로그램 이용해서 통신 / 서버를 만들고, 프로그램 이용해서 통신 해볼 예정
+
+  프로그램 간의 데이터 통신 어떻게 이루어지는지 확인해보자.
+  프로그램 : SerialPortMon
+  https://blog.naver.com/PostView.naver?blogId=100dorimake&logNo=223079319822
+---
+
+
+## 서버 코드
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <winsock2.h>
+
+#pragma comment(lib, "ws2_32.lib")
+
+#define PORT 5000
+#define BUFFER_SIZE 1024
+
+int main() {
+    WSADATA wsa;
+    WSAStartup(MAKEWORD(2, 2), &wsa);
+
+    SOCKET server_fd, new_socket;
+    struct sockaddr_in address;
+    int addrlen = sizeof(address);
+    char buffer[BUFFER_SIZE] = { 0 };
+    char* message = "Hello from server";
+
+    server_fd = socket(AF_INET, SOCK_STREAM, 0);
+    address.sin_family = AF_INET;
+    address.sin_addr.s_addr = INADDR_ANY;
+    address.sin_port = htons(PORT);
+
+    bind(server_fd, (struct sockaddr*)&address, sizeof(address));
+    listen(server_fd, 3);
+
+    printf("서버 대기 중... 포트 %d\n", PORT);
+
+    new_socket = accept(server_fd, (struct sockaddr*)&address, &addrlen);
+
+    recv(new_socket, buffer, BUFFER_SIZE, 0);
+    printf("클라이언트: %s\n", buffer);
+
+    send(new_socket, message, strlen(message), 0);
+    printf("서버: %s\n", message);
+
+    closesocket(new_socket);
+    closesocket(server_fd);
+    WSACleanup();
+
+    return 0;
+}
+```
+
+---
+---
+
+
+## 클라이언트 코드 (실행안됌)
+```c
+#include <stdio.h>
+#include <windows.h>
+
+#define SERIAL_PORT "COM3"  // 사용할 포트 지정
+
+int main() {
+    HANDLE hSerial;
+    DCB dcbSerialParams = { 0 };
+    COMMTIMEOUTS timeouts = { 0 };
+
+    hSerial = CreateFile(SERIAL_PORT, GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, 0, 0);
+    if (hSerial == INVALID_HANDLE_VALUE) {
+        printf("시리얼 포트 열기 실패\n");
+        return 1;
+    }
+
+    // 포트 설정
+    dcbSerialParams.DCBlength = sizeof(dcbSerialParams);
+    GetCommState(hSerial, &dcbSerialParams);
+    dcbSerialParams.BaudRate = CBR_115200;  // 통신 속도 115200bps
+    dcbSerialParams.ByteSize = 8;           // 데이터 비트 8개
+    dcbSerialParams.StopBits = ONESTOPBIT;  // 스톱 비트 1개
+    dcbSerialParams.Parity = NOPARITY;      // 패리티 없음
+    SetCommState(hSerial, &dcbSerialParams);
+
+    // 타임아웃 설정
+    timeouts.ReadIntervalTimeout = 50;
+    timeouts.ReadTotalTimeoutConstant = 50;
+    timeouts.ReadTotalTimeoutMultiplier = 10;
+    timeouts.WriteTotalTimeoutConstant = 50;
+    timeouts.WriteTotalTimeoutMultiplier = 10;
+    SetCommTimeouts(hSerial, &timeouts);
+
+    // 데이터 전송
+    char* message = "Hello Serial Port\n";
+    DWORD bytesWritten;
+    WriteFile(hSerial, message, strlen(message), &bytesWritten, NULL);
+    printf("전송: %s", message);
+
+    // 데이터 수신
+    char buffer[256];
+    DWORD bytesRead;
+    ReadFile(hSerial, buffer, sizeof(buffer) - 1, &bytesRead, NULL);
+    if (bytesRead > 0) {
+        buffer[bytesRead] = '\0';
+        printf("수신: %s\n", buffer);
+    }
+
+    CloseHandle(hSerial);  // 포트 닫기
+    return 0;
+}
+```
+
+---
