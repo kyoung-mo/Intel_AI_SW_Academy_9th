@@ -260,3 +260,78 @@ int main(void)
 
 ---
 
+# 수식의 계산
+- 수식 표기 방법 : 전위(prefix), 중위(infix), 후위(postfix)
+
+  <img width="975" height="187" alt="image" src="https://github.com/user-attachments/assets/dd5b1394-a449-4f5a-9e55-444e7914419c" />
+
+- 컴퓨터에서의 수식 계산 순서
+  - 중위 표기식 -> 후위 표기식 -> 계산
+  - 2+3*4 -> 234*+ -> 14
+  - 모두 스택을 사용
+  - 먼저 후위표기식의 계산법을 알아보자
+ 		- 수식을 왼쪽에서 오른쪽으로 스캔하여 피연산자이면 스택에 저장하고 연산자이면 필요한 수만큼의 피연산자를 스택에서 꺼내 연산을 실행하고 연산의 결과를 다시 스택에 저장
+
+		- 예) 82/3-32*+
+
+<img width="340" height="312" alt="image" src="https://github.com/user-attachments/assets/e33f47ed-6ff4-4b9f-afcf-5b525d1fec29" />
+
+<img width="718" height="690" alt="image" src="https://github.com/user-attachments/assets/6a6fdd64-eb9f-49d0-8eab-9966daca9082" />
+
+## 후위표기식 계산 알고리즘
+
+<img width="802" height="351" alt="image" src="https://github.com/user-attachments/assets/abce7851-be04-44d7-b81c-811ea5b5704b" />
+
+<후위 표기식 계산>
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX_STACK_SIZE 100
+
+typedef char element;	
+typedef struct {
+	element* data;
+	int capacity;
+	int top;
+} StackType;
+
+int eval(char exp[])
+{
+	int op1, op2, value, i = 0;
+	int len = strlen(exp);
+	char ch;
+	StackType s;
+	init_stack(&s);
+	for (i = 0; i < len; i++) {
+		ch = exp[i];
+		if (ch != '+' && ch != '-' && ch != '*' && ch != '/') {
+			value = ch - '0';	// 입력이 피연산자이면
+			push(&s, value);
+		}
+		else {	//연산자이면 피연산자를 스택에서 제거
+			op2 = pop(&s);
+			op1 = pop(&s);
+			switch (ch) { //연산을 수행하고 스택에 저장 
+			case '+': push(&s, op1 + op2); break;
+			case '-': push(&s, op1 - op2); break;
+			case '*': push(&s, op1 * op2); break;
+			case '/': push(&s, op1 / op2); break;
+			}
+		}
+	}
+	return pop(&s);
+}
+int main(void)
+{
+	int result;
+	printf("후위표기식은 82/3-32*+\n");
+	result = eval("82/3-32*+");
+	printf("결과값은 %d\n", result);
+	return 0;
+}
+```
+
+<img width="1111" height="188" alt="image" src="https://github.com/user-attachments/assets/eeb36280-f6b5-4452-98c9-987248781212" />
+
+
+
