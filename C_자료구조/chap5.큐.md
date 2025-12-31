@@ -1,4 +1,4 @@
-6장 : [https://docs.google.com/presentation/d/1Xg4BNFt5drinjFWmprxzgoptJuVlEx0N/edit?slide=id.p5#slide=id.p5](https://docs.google.com/presentation/d/1Xg4BNFt5drinjFWmprxzgoptJuVlEx0N/edit?slide=id.p3#slide=id.p3)
+5장 : [https://docs.google.com/presentation/d/1Xg4BNFt5drinjFWmprxzgoptJuVlEx0N/edit?slide=id.p5#slide=id.p5](https://docs.google.com/presentation/d/1Xg4BNFt5drinjFWmprxzgoptJuVlEx0N/edit?slide=id.p3#slide=id.p3)
 
 ## 큐(QUEUE)
 - 먼저 들어온 데이터가 먼저 나가는 자료구조
