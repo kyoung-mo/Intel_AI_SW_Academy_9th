@@ -55,15 +55,15 @@ int main() {
 
 ```
 
-위 실행결과에서  
+위 실행결과에서 아래 같이 저장된다.
+```c
 animal = &animal[0][0];  
 animal[0] = &animal[0][0];  
 animal[1] = &animal[1][0];  
 animal[2] = &animal[2][0];  
 animal[3] = &animal[3][0];  
-animal[4] = &animal[4][0];  
-과 같이 저장된다.  
-
+animal[4] = &animal[4][0];
+```
 ---
 
 dog  
