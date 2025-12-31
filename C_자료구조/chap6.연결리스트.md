@@ -223,6 +223,33 @@ ListNode*  insert(ListNode *head, ListNode *pre, element value)
 }
 ```
 
+`ListNode *p = (ListNode *) malloc(sizeof(ListNode));`
+- p는 주소 값을 저장하는 변수, 즉 포인터 변수이고,
+- ⭐malloc() 함수의 반환하는 것도 주소값⭐
+
+- 즉 p는 일반 변수(x 같은 값)이 아니라
+- 노드가 저장된 메모리의 주소를 들고 있는 변수 => 포인터
+
+`pre->link = p;` 이렇게 주소값이 연결되는게 맞다.
+
+---
+
+⭐malloc이 하는 일⭐
+`malloc(sizeof(ListNode))`
+-> 힙 영역에 `ListNode` 크기만큼 메모리를 할당
+-> 그 메모리의 시작 주소를 반환
+
+즉, `malloc -> "여기에 노드를 만들어 뒀다, 시작 주소 = 0x1000"`
+
+p는 무엇인가?
+- 선언을 보면 `ListNode *p;`
+- p는 `ListNode`를 가리키는 포인터 변수.
+
+정리하면,
+- `p = 주소를 저장하는 변수`
+- malloc 결과를 넣으면 p ----> [새로 생성된 노드의 메모리 주소]
+
+
 ## 단순 연결리스트 (삭제 연산)
 
 <img width="537" height="354" alt="image" src="https://github.com/user-attachments/assets/705da408-02a9-4d2d-8ea7-085c623ce2cb" />
