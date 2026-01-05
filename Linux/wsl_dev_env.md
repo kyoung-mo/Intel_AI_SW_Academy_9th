@@ -307,7 +307,9 @@ make
 }
 ```
 
-- gdb 사용법 정리
+<img width="963" height="775" alt="image" src="https://github.com/user-attachments/assets/6503b5fe-8b85-4f88-a4ef-97d0e6c55acc" />
+
+`0A 00 00 00`으로 기록되는 이유? 리틀앤디언 방식 기록
 
 ### 7. 주의 사항 (WSL 환경)
 
