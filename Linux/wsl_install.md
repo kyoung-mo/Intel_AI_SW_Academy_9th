@@ -49,8 +49,31 @@ https://learn.microsoft.com/ko-kr/windows/wsl/install
 
         
 - 네트워킹 설정
-    
+
+[power shell]
+
+<img width="579" height="144" alt="image" src="https://github.com/user-attachments/assets/e342e72f-6673-49c5-8f0b-42988e569d64" />
+
+[wsl2 전용 가상 네트워크 , windows가 가상 라우터 역할]
+
+- wsl 리눅스는 이 네트워크 안에 있음
+
+<img width="648" height="146" alt="image" src="https://github.com/user-attachments/assets/7629b067-6b64-4d55-9c7d-b433d9bf39c4" />
+
+
+- 게이트웨이란?
+    - 내 내트웨크를 벗어나 다른 네트워크로 나갈 때 반드시 거쳐야 하는 출구
+    - 목적지가 내 서브넷 안이면 -> 직접 보냄
+    - 목적지가 내 서브넷 밖이면 -> 게이트웨이에게 보냄
+
+[wsl에서 ip addr]
+
+<img width="921" height="288" alt="image" src="https://github.com/user-attachments/assets/da44e818-82c0-4166-b97f-459c8e9efc99" />
+
+
     WSL Settgings ⇒ mirror
+    - window ip가 그대로 wsl에서 동작하도록 사용
+        (지금은 해줄 필요 없음)
     
 <img width="1602" height="520" alt="image" src="https://github.com/user-attachments/assets/a3700ee1-4870-4c29-afc1-8f224ed8309f" />
 
@@ -82,7 +105,21 @@ https://learn.microsoft.com/ko-kr/windows/wsl/install
         ```markdown
         wsl --unregister Ubuntu_Migrated
         ```
-        
+
+
+---
+
+ls -al을 할 때 하드웨어를 접근할 수 있는 권한이 필요한데,
+shell에서 권한을 가지고 있는 프로그램을 짜놨다.
+
+리눅스에서는 pwd, ls 등을 shell이 지원을 해준다.
+지금 쓰고 있는 shell은 bash라고 한다.
+
+Cshell같은 경우는 기능이 별로 없다.
+bash shall을 쓰는 경우 oh my bash 사용하는걸 추천
+
+---
+
 - oh my bash
     
     https://github.com/ohmybash/oh-my-bash
