@@ -1,0 +1,6 @@
+/home/mo/project/my_project/build/CMakeFiles/mymath_static.dir
+/home/mo/project/my_project/build/CMakeFiles/mymath_shared.dir
+/home/mo/project/my_project/build/CMakeFiles/main_static_app.dir
+/home/mo/project/my_project/build/CMakeFiles/main_shared_app.dir
+/home/mo/project/my_project/build/CMakeFiles/edit_cache.dir
+/home/mo/project/my_project/build/CMakeFiles/rebuild_cache.dir

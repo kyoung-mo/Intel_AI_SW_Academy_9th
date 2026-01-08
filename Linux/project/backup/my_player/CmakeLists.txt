@@ -1,0 +1,36 @@
+cmake_minimum_required(VERSION 3.10)
+project(MP4Player C)
+
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_BUILD_TYPE Debug)
+
+# PkgConfig 모듈 로드
+find_package(PkgConfig REQUIRED)
+
+# FFmpeg 및 SDL2 라이브러리 체크 (importlib 제거)
+pkg_check_modules(AVCODEC REQUIRED libavcodec)
+pkg_check_modules(AVFORMAT REQUIRED libavformat)
+pkg_check_modules(SWSCALE REQUIRED libswscale)
+pkg_check_modules(AVUTIL REQUIRED libavutil)
+pkg_check_modules(SDL2 REQUIRED sdl2)
+
+# 실행 파일 생성
+add_executable(mp4_player main.c)
+
+# 인클루드 경로 추가
+target_include_directories(mp4_player PRIVATE 
+    ${AVCODEC_INCLUDE_DIRS} 
+    ${AVFORMAT_INCLUDE_DIRS} 
+    ${SWSCALE_INCLUDE_DIRS} 
+    ${AVUTIL_INCLUDE_DIRS}
+    ${SDL2_INCLUDE_DIRS}
+)
+
+# 라이브러리 링크
+target_link_libraries(mp4_player 
+    ${AVCODEC_LIBRARIES} 
+    ${AVFORMAT_LIBRARIES} 
+    ${SWSCALE_LIBRARIES} 
+    ${AVUTIL_LIBRARIES}
+    ${SDL2_LIBRARIES}
+)

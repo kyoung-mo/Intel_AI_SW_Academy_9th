@@ -1,0 +1,3 @@
+/home/mo/project/my_player/build/CMakeFiles/mp4_player.dir
+/home/mo/project/my_player/build/CMakeFiles/edit_cache.dir
+/home/mo/project/my_player/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/mp4_player.dir/main.c.o -o mp4_player  -lavcodec -lavformat -lswscale -lavutil -lSDL2 

@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -shared -Wl,-soname,libmymath.so -o lib/libmymath.so CMakeFiles/mymath_shared.dir/src/add.c.o CMakeFiles/mymath_shared.dir/src/substract.c.o 
