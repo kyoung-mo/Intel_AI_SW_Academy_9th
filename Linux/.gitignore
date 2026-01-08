@@ -1,0 +1,13 @@
+# build outputs
+my_project/bin/
+my_project/lib/
+my_project/build/
+
+# object files
+*.o
+
+# cmake generated
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
