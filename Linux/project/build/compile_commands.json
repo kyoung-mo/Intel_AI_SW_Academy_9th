@@ -1,0 +1,38 @@
+[
+{
+  "directory": "/home/mo/Intel_AI_SW_Academy_9th/Linux/project/build",
+  "command": "/usr/bin/gcc  -I/home/mo/Intel_AI_SW_Academy_9th/Linux/project/my_project/include -g -o CMakeFiles/mymath_static.dir/src/add.c.o -c /home/mo/Intel_AI_SW_Academy_9th/Linux/project/my_project/src/add.c",
+  "file": "/home/mo/Intel_AI_SW_Academy_9th/Linux/project/my_project/src/add.c",
+  "output": "CMakeFiles/mymath_static.dir/src/add.c.o"
+},
+{
+  "directory": "/home/mo/Intel_AI_SW_Academy_9th/Linux/project/build",
+  "command": "/usr/bin/gcc  -I/home/mo/Intel_AI_SW_Academy_9th/Linux/project/my_project/include -g -o CMakeFiles/mymath_static.dir/src/substract.c.o -c /home/mo/Intel_AI_SW_Academy_9th/Linux/project/my_project/src/substract.c",
+  "file": "/home/mo/Intel_AI_SW_Academy_9th/Linux/project/my_project/src/substract.c",
+  "output": "CMakeFiles/mymath_static.dir/src/substract.c.o"
+},
+{
+  "directory": "/home/mo/Intel_AI_SW_Academy_9th/Linux/project/build",
+  "command": "/usr/bin/gcc -Dmymath_shared_EXPORTS -I/home/mo/Intel_AI_SW_Academy_9th/Linux/project/my_project/include -g -fPIC -o CMakeFiles/mymath_shared.dir/src/add.c.o -c /home/mo/Intel_AI_SW_Academy_9th/Linux/project/my_project/src/add.c",
+  "file": "/home/mo/Intel_AI_SW_Academy_9th/Linux/project/my_project/src/add.c",
+  "output": "CMakeFiles/mymath_shared.dir/src/add.c.o"
+},
+{
+  "directory": "/home/mo/Intel_AI_SW_Academy_9th/Linux/project/build",
+  "command": "/usr/bin/gcc -Dmymath_shared_EXPORTS -I/home/mo/Intel_AI_SW_Academy_9th/Linux/project/my_project/include -g -fPIC -o CMakeFiles/mymath_shared.dir/src/substract.c.o -c /home/mo/Intel_AI_SW_Academy_9th/Linux/project/my_project/src/substract.c",
+  "file": "/home/mo/Intel_AI_SW_Academy_9th/Linux/project/my_project/src/substract.c",
+  "output": "CMakeFiles/mymath_shared.dir/src/substract.c.o"
+},
+{
+  "directory": "/home/mo/Intel_AI_SW_Academy_9th/Linux/project/build",
+  "command": "/usr/bin/gcc  -I/home/mo/Intel_AI_SW_Academy_9th/Linux/project/my_project/include -g -o CMakeFiles/main_static_app.dir/app/main.c.o -c /home/mo/Intel_AI_SW_Academy_9th/Linux/project/my_project/app/main.c",
+  "file": "/home/mo/Intel_AI_SW_Academy_9th/Linux/project/my_project/app/main.c",
+  "output": "CMakeFiles/main_static_app.dir/app/main.c.o"
+},
+{
+  "directory": "/home/mo/Intel_AI_SW_Academy_9th/Linux/project/build",
+  "command": "/usr/bin/gcc  -I/home/mo/Intel_AI_SW_Academy_9th/Linux/project/my_project/include -g -o CMakeFiles/main_shared_app.dir/app/main.c.o -c /home/mo/Intel_AI_SW_Academy_9th/Linux/project/my_project/app/main.c",
+  "file": "/home/mo/Intel_AI_SW_Academy_9th/Linux/project/my_project/app/main.c",
+  "output": "CMakeFiles/main_shared_app.dir/app/main.c.o"
+}
+]

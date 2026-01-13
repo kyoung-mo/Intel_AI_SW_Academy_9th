@@ -1,0 +1,87 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "MyMathProject",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "main_shared_app::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-main_shared_app-Debug-e332bbffacc7b7327929.json",
+					"name" : "main_shared_app",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "main_static_app::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-main_static_app-Debug-9c7feebb7d1a266cfe6e.json",
+					"name" : "main_static_app",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mymath_shared::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mymath_shared-Debug-6c0aea8b63d48fd9ccae.json",
+					"name" : "mymath_shared",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mymath_static::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mymath_static-Debug-766ed7a55d99c78ac33c.json",
+					"name" : "mymath_static",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/mo/Intel_AI_SW_Academy_9th/Linux/project/build",
+		"source" : "/home/mo/Intel_AI_SW_Academy_9th/Linux/project/my_project"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

@@ -1,0 +1,6 @@
+/home/mo/Intel_AI_SW_Academy_9th/Linux/project/build/CMakeFiles/mymath_static.dir
+/home/mo/Intel_AI_SW_Academy_9th/Linux/project/build/CMakeFiles/mymath_shared.dir
+/home/mo/Intel_AI_SW_Academy_9th/Linux/project/build/CMakeFiles/main_static_app.dir
+/home/mo/Intel_AI_SW_Academy_9th/Linux/project/build/CMakeFiles/main_shared_app.dir
+/home/mo/Intel_AI_SW_Academy_9th/Linux/project/build/CMakeFiles/edit_cache.dir
+/home/mo/Intel_AI_SW_Academy_9th/Linux/project/build/CMakeFiles/rebuild_cache.dir
